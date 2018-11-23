@@ -1,0 +1,31 @@
+{
+  "name": "starnode",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "svg-assets-cache.js": "svg-assets-cache#*",
+    "angular-material": "1.1.4",
+    "angular-ui-router": "1.0.3",
+    "ngstorage": "^0.3.11",
+    "oclazyload": "^1.1.0",
+    "angular-google-maps": "^2.4.1",
+    "axios": "^0.16.2",
+    "angular-material-icons": "^0.7.1",
+    "svg-morpheus": "^0.3.2",
+    "angular-material-data-table": "^0.10.10",
+    "textAngular": "^1.5.16",
+    "angular": "1.5.5",
+    "angular-material-expansion-panel": "^0.7.2",
+    "c3-angular": "^1.4.0",
+    "d3": "^5.7.0"
+  }
+}

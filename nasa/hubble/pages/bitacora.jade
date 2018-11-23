@@ -1,0 +1,28 @@
+
+div(layout="flex" style="justify-content : center")
+    md-card(flex="90")
+        h1 Bitacora Estelar
+        md-divider
+        md-table-container
+            table(md-table md-row-select multiple)
+                thead(md-head)
+                    tr(md-row)
+                        th(md-column) Version
+                        th(md-column) Capitan
+                        th(md-column) Fecha
+                        th(md-column) Aportaciones
+                        th(md-column) Comentario
+                    
+                tbody(md-body)
+                    tr(md-row md-select="dato" md-select-id="name" md-auto-select)
+                        td(md-cell) 1.0.0
+                        td(md-cell) Ulises
+                        td(md-cell) 20 de noviembre del 2018
+                        td(md-cell) Se compartio el starconsole con la tripulación
+                        td(md-cell) Fue bien aceptado pero con algunas oportunidades de crecimiento
+                    tr(md-row md-select="dato" md-select-id="name" md-auto-select)
+                        td(md-cell) 1.0.1
+                        td(md-cell) Ulises
+                        td(md-cell) 20 de noviembre del 2018
+                        td(md-cell) Se agrego la constelación de formulario
+                        td(md-cell) 

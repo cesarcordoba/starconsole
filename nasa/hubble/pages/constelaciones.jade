@@ -1,0 +1,87 @@
+h1 Constelaciones
+.container.constelaciones
+    .content
+        section
+            .grafico
+                #total
+            .lista
+                
+                form(ng-submit="crearConstelacion()")
+                    md-input-container
+                        label Nombre
+                        input(ng-model="nuevo.nombre")
+                    md-input-container
+                        label Tipo
+                        input(ng-model="nuevo.tipo")
+                    md-input-container
+                        label Modelo base
+                        md-select(ng-model="nuevo.IdPlaneta")
+                            md-option(ng-value="null") ---
+                            md-option(ng-value="planeta.id" ng-repeat="planeta in ctrl.planetas") {{ planeta.singular }}
+                    md-input-container
+                        label Galaxia
+                        md-select(ng-model="nuevo.galaxia")
+                            md-option(ng-value="null") ---
+                            md-option(ng-value="galaxia" ng-repeat="galaxia in ctrl.galaxias.items") {{ galaxia.nombre }}
+                    md-input-container
+                        label Constelacion padre
+                        md-select(ng-model="nuevo.IdConstelacion")
+                            md-option(ng-value="null") ---
+                            md-option(ng-value="constelacion.id" ng-repeat="constelacion in nuevo.galaxia.constelaciones.items") {{ constelacion.nombre }}
+                    
+                    md-button(type="submit")
+                        md-icon add
+                
+                md-expansion-panel-group(md-component-id="galaxias" multiple)
+                    md-expansion-panel(md-component-id="galaxia.nombre" ng-repeat="galaxia in ctrl.galaxias.items")
+                        md-expansion-panel-collapsed
+                            md-expansion-panel-header
+                                .md-title {{galaxia.nombre}}
+                                md-expansion-panel-icon
+                        md-expansion-panel-expanded
+                            md-expansion-panel-header
+                                .md-title {{galaxia.nombre}}
+                            md-expansion-panel-content
+                                md-table-container
+                                    table(md-table md-row-select multiple)
+                                        thead(md-head)
+                                            tr(md-row)
+                                                th(md-column) Status
+                                                th(md-column) Componente
+                                                th(md-column) Tipo
+                                                th(md-column) Planeta
+                                                th(md-column) Padre
+                                                th(md-column) Acciones
+                                            
+                                        tbody(md-body)
+                                            tr(md-row md-select="dato" md-select-id="name" md-auto-select ng-repeat="item in galaxia.constelaciones.items")
+                                                td(md-cell)
+                                                    md-input-container
+                                                        label Status
+                                                        md-switch(ng-model="item.status" ng-true-value="1" ng-false-value="0")
+                                                td(md-cell)
+                                                    md-input-container
+                                                        input(ng-model="item.nombre")
+                                                    
+                                                td(md-cell)
+                                                    md-input-container
+                                                        input(ng-model="item.tipo")
+                                                td(md-cell)
+                                                    md-input-container
+                                                        label planeta
+                                                        md-select(ng-model="item.IdPlaneta")
+                                                            md-option(ng-value="planeta.id" ng-repeat="planeta in ctrl.planetas") {{ planeta.singular }}
+                                                td(md-cell)
+                                                    md-input-container
+                                                        label constelacion
+                                                        md-select(ng-model="item.IdConstelacion")
+                                                            md-option(ng-value="constelacion.id" ng-repeat="constelacion in galaxia.constelaciones.items") {{ constelacion.nombre }}
+
+                                                td(md-cell)
+                                                    md-button(ng-click="item.eliminar($index)")
+                                                        md-icon delete
+                                                    md-button(ng-click="item.actualizar()")
+                                                        md-icon edit
+                            md-expansion-panel-footer
+                                md-button(ng-click="$panel.collapse()") Collapse
+                

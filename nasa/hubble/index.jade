@@ -1,0 +1,78 @@
+html(ng-app="myapp")
+	head
+		title Starconsole
+		
+		//- Angular
+
+		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js")
+		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js")
+		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js")
+		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js")
+		
+		script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js")
+		
+		script(type="text/javascript", src="https://code.jquery.com/jquery-3.3.1.min.js")
+		
+		script(type="text/javascript", src="bower_components/angular-ui-router/release/angular-ui-router.min.js")
+
+	
+		//- Lazyload
+		script(type="text/javascript", src="bower_components/oclazyload/dist/ocLazyLoad.min.js")
+		//- 
+	
+		//- //- Axios
+		script(type="text/javascript", src="bower_components/axios/dist/axios.min.js")
+		//- 
+		
+		//- lodash
+		script(type="text/javascript", src="bower_components/lodash/dist/lodash.min.js")
+		
+		//- 
+		//- Data-Table
+		script(type="text/javascript", src="bower_components/angular-material-data-table/dist/md-data-table.min.js")
+		
+		//- //- Angular material
+		script(type="text/javascript", src="bower_components/angular-material/angular-material.min.js")
+		script(type="text/javascript", src="bower_components/angular-material-expansion-panel/dist/md-expansion-panel.js")
+		
+		//- d3.js & c3.js
+		script(type="text/javascript", src="bower_components/d3/d3.min.js")
+		script(type="text/javascript", src="bower_components/c3/c3.min.js")
+		script(type="text/javascript", src="bower_components/c3-angular/c3-angular.min.js")
+	
+		//- 
+		script(type="text/javascript", src="bower_components/textAngular/dist/textAngular-rangy.min.js")
+		script(type="text/javascript", src="bower_components/textAngular/dist/textAngular-sanitize.min.js")
+		script(type="text/javascript", src="bower_components/textAngular/dist/textAngular.min.js")
+
+		//- local js
+		script(type="text/javascript", src="js/app.js")
+		script(type="text/javascript", src="js/controller.js")
+		script(type="text/javascript", src="js/modulos.js")
+		script(type="text/javascript", src="js/states.js")
+		script(type="text/javascript", src="js/servicios.js")
+		//- 
+		//- //- Css externos
+		link(type="text/css" rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.10/angular-material.min.css")
+		link(type="text/css" rel="stylesheet", href="bower_components/angular-material-data-table/dist/md-data-table.min.css")
+		link(type="text/css" rel="stylesheet", href="bower_components/angular-material-expansion-panel/dist/md-expansion-panel.min.css")
+		
+			
+		link(type="text/css" rel="stylesheet", href="bower_components/c3/c3.min.css")
+		link(type="text/css" rel="stylesheet", href="estilos/style.css")
+		//- 
+		//- //- Css locales
+		//- link(type="text/css" rel="stylesheet" href="stylus/style.css")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+		//- 
+		//- 
+		//- link(type="text/css" rel="stylesheet", href="stylus/main.css")
+
+	body(ng-controller="Ctrl as ctrl")
+		//- div(ng-controller="mainCtrl as ctrl
+		md-nav-bar(md-selected-nav-item="currentNavItem")
+			md-nav-item(md-nav-sref="home" name="home") Home
+			md-nav-item(md-nav-sref="planetas" name="planetas") Planetas
+			md-nav-item(md-nav-sref="constelaciones" name="constelaciones") Constelaciones
+			md-nav-item(md-nav-sref="bitacora" name="bitacora") Bitacora Estelares
+		main(ui-view="main" class="page")

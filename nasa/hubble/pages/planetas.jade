@@ -1,0 +1,86 @@
+h1 Planetas
+.container
+    .content
+        section
+            .lista
+                form(ng-submit="ctrl.planetas.crear()")
+                    md-input-container
+                        label Singular
+                        input(ng-model="nuevo.singular")
+                    md-input-container
+                        label Plural
+                        input(ng-model="nuevo.plural")
+                    md-button(type="submit")
+                        md-icon add
+                
+                md-table-container
+                    table(md-table md-row-select multiple)
+                        thead(md-head)
+                            tr(md-row)
+                                th(md-column) Singular
+                                th(md-column) Orbitas
+                                th(md-column) Meteoritos
+                            
+                                
+                        tbody(md-body)
+                            tr(md-row md-select="dato" md-select-id="name" md-auto-select ng-repeat="item in ctrl.planetas.items")
+                                td(md-cell)
+                                    md-button(ui-sref="planeta({id : item.id})")
+                                        h3 {{item.id}} | {{item.singular}}
+                                td(md-cell)
+                                    md-expansion-panel(md-component-id="item.singular")
+                                        md-expansion-panel-collapsed
+                                            md-expansion-panel-header
+                                                .md-title {{item.SubPlanetas.length}} Orbitas
+                                                md-expansion-panel-icon
+                                        md-expansion-panel-expanded
+                                            md-expansion-panel-header
+                                                .md-title {{item.SubPlanetas.length}} Orbitas
+                                                .md-summary Agrega nuevas orbitas
+                                            md-expansion-panel-content
+                                                form(ng-submit="item.crearOrbita()")
+                                                    md-input-container
+                                                        label Agregar orbita
+                                                        md-select(ng-model="item.nuevoplaneta")
+                                                            md-option(ng-value="planeta" ng-repeat="planeta in ctrl.planetas.items") {{planeta.singular}}
+                                                    md-divider
+                                                    md-input-container
+                                                        label Agregar orbita
+                                                        md-select(ng-model="item.nuevaorbita")
+                                                            md-option(ng-value="orbita" ng-repeat="orbita in ctrl.orbitas") {{orbita.nombre}}
+                                                    md-button(type="submit")
+                                                        md-icon add
+                                                md-list
+                                                    md-list-item.md-2-line(ng-repeat="planeta in item.SubPlanetas")
+                                                        .md-list-item-text
+                                                            strong {{ planeta.id }} | {{ planeta.singular }}
+                                                            p {{planeta.orbitas.nombre}}
+                                                        md-divider
+                                            md-expansion-panel-footer
+                                                md-button(ng-click="$panel.collapse()") Collapse
+                                    
+                                td(md-cell)
+                                    md-expansion-panel(md-component-id="item.singular")
+                                        md-expansion-panel-collapsed
+                                            md-expansion-panel-header
+                                                .md-title {{item.meteoros.length}} Meteoritos
+                                                md-expansion-panel-icon
+                                        md-expansion-panel-expanded
+                                            md-expansion-panel-header
+                                                .md-title
+                                                    md-button(ng-click="item.nuevoMeteoro()") Crear Nuevo meteoro
+                                            md-expansion-panel-content                                                    
+                                                md-list
+                                                    md-list-item.md-2-line(ng-repeat="meteoro in item.meteoros")
+                                                        .md-list-item-text
+                                                            strong {{ meteoro.nombre }}
+                                                            p {{meteoro.tipo}}
+                                                        .md-secondary
+                                                            md-button(ng-click="item.eliminarMeteoro(meteoro.id, $index)")
+                                                                md-icon delete
+                                                        md-divider
+                                            md-expansion-panel-footer
+                                                md-button(ng-click="$panel.collapse()") Collapse
+
+            .grafico
+                #total

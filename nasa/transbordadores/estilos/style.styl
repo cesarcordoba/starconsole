@@ -1,0 +1,166 @@
+rojo = #c42830
+
+.container
+    display: flex
+    justify-content: center;
+    .content
+        width 95%
+
+.card
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
+
+.node
+    fill: #c42830
+    stroke: #fff
+    stroke-width: 2px
+
+.link
+    stroke: #c42830
+    stroke-width: 2px
+    // &.BelongsToMany
+    //     stroke: rojo
+    //     background-color:  rojo
+    //     &:after
+    //         content: 'o'
+    //         width 20px
+    //         height 20px
+    //         position: relative;
+    //         background-color: rojo
+    // &.HasMany
+    //     &:after
+    //         content: ''
+    //         width 20px
+    //         height 20px
+    //         position: absolute;
+    //         background-color: rojo
+    // &.BelongsTo
+    //     &:after
+    //         content: '>>>>>>'
+    //         font-size 20px
+
+.constelaciones
+    section
+        flex-direction: column;
+    path
+        fill none
+        stroke black
+    text
+        text-shadow:
+            -1px -1px 3px white,
+            -1px  1px 3px white,
+            1px -1px 3px white,
+            1px  1px 3px white;
+    md-table-container
+        md-input-container
+            margin 0px
+            .md-errors-spacer
+                min-height 0px
+
+section
+    display flex
+    justify-content: center
+    align-items: flex-start;
+    .lista, .grafico
+        width 100%
+        margin 10px
+    .grafico
+        @extend .card
+        background-color white
+    .lista
+        form
+            @extend .card
+            background-color white
+            display: flex
+            md-input-container
+                width 100%
+                margin 0px
+                .md-errors-spacer
+                    min-height 0px
+            .md-button
+                background-color: rojo
+                margin 0px
+                border-radius 0px
+        md-table-container
+            @extend .card
+            tr
+                margin 5px 0
+                background-color white
+                td
+                    padding 0px !important
+                    h3
+                        padding 0 5px
+                        margin: 0px
+            md-expansion-panel
+                margin 0px
+                md-expansion-panel-collapsed
+                    padding: 0px
+                    width 100px
+                    md-expansion-panel-header
+                        width: 100%
+                        .md-expansion-panel-header-container
+                            padding 0px
+                            .md-title
+                                width 100%
+                                max-width: inherit;
+                            md-icon
+                                margin 0px 10px
+                md-expansion-panel-expanded
+                    padding 0px
+                    md-expansion-panel-content
+                        padding 0px
+                        form
+                            margin 0px
+                            display: flex
+                            md-input-container
+                                width 100%
+                                height 48px
+                                margin 0px
+                                md-select
+                                    height 48px
+                                    md-select-value
+                                        span
+                                            padding 10px 0
+                            .md-button
+                                margin 0px
+                                background-color: rojo
+                        md-list
+                            margin 0px
+                            padding 0px
+                    md-expansion-panel-footer
+                        .md-expansion-panel-footer-container
+                            padding 0px
+                            .md-button
+                                margin 0px
+                                width 100%
+
+.planeta
+    .cabecera
+        display: flex
+        .titulo, .estadisticas
+            width 100%
+            display: flex
+            justify-content: center;
+            align-items: center
+            flex-direction: column;
+            margin 30px 0
+            h1
+                margin 0px
+            strong
+                margin 0px
+    md-expansion-panel-header
+        width 100%
+    form
+        display: flex
+        flex-direction column
+        .linea
+            display: flex
+        .md-button
+            background-color: rojo
+            color white
+    md-input-container
+        width 100%
+        textarea
+            &.descripcion
+                height 100px
+            &.contenido
+                height 400px !important

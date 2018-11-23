@@ -1,0 +1,177 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container .content {
+  width: 95%;
+}
+.card,
+section .grafico,
+section .lista form,
+section .lista md-table-container {
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+.node {
+  fill: #c42830;
+  stroke: #fff;
+  stroke-width: 2px;
+}
+.link {
+  stroke: #c42830;
+  stroke-width: 2px;
+}
+.constelaciones section {
+  flex-direction: column;
+}
+.constelaciones path {
+  fill: none;
+  stroke: #000;
+}
+.constelaciones text {
+  text-shadow: -1px -1px 3px #fff, -1px 1px 3px #fff, 1px -1px 3px #fff, 1px 1px 3px #fff;
+}
+.constelaciones md-table-container md-input-container {
+  margin: 0px;
+}
+.constelaciones md-table-container md-input-container .md-errors-spacer {
+  min-height: 0px;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+section .lista,
+section .grafico {
+  width: 100%;
+  margin: 10px;
+}
+section .grafico {
+  background-color: #fff;
+}
+section .lista form {
+  background-color: #fff;
+  display: flex;
+}
+section .lista form md-input-container {
+  width: 100%;
+  margin: 0px;
+}
+section .lista form md-input-container .md-errors-spacer {
+  min-height: 0px;
+}
+section .lista form .md-button {
+  background-color: #c42830;
+  margin: 0px;
+  border-radius: 0px;
+}
+section .lista md-table-container tr {
+  margin: 5px 0;
+  background-color: #fff;
+}
+section .lista md-table-container tr td {
+  padding: 0px !important;
+}
+section .lista md-table-container tr td h3 {
+  padding: 0 5px;
+  margin: 0px;
+}
+section .lista md-table-container md-expansion-panel {
+  margin: 0px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-collapsed {
+  padding: 0px;
+  width: 100px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-collapsed md-expansion-panel-header {
+  width: 100%;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-collapsed md-expansion-panel-header .md-expansion-panel-header-container {
+  padding: 0px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-collapsed md-expansion-panel-header .md-expansion-panel-header-container .md-title {
+  width: 100%;
+  max-width: inherit;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-collapsed md-expansion-panel-header .md-expansion-panel-header-container md-icon {
+  margin: 0px 10px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded {
+  padding: 0px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content {
+  padding: 0px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content form {
+  margin: 0px;
+  display: flex;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content form md-input-container {
+  width: 100%;
+  height: 48px;
+  margin: 0px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content form md-input-container md-select {
+  height: 48px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content form md-input-container md-select md-select-value span {
+  padding: 10px 0;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content form .md-button {
+  margin: 0px;
+  background-color: #c42830;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded md-expansion-panel-content md-list {
+  margin: 0px;
+  padding: 0px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer .md-expansion-panel-footer-container {
+  padding: 0px;
+}
+section .lista md-table-container md-expansion-panel md-expansion-panel-expanded md-expansion-panel-footer .md-expansion-panel-footer-container .md-button {
+  margin: 0px;
+  width: 100%;
+}
+.planeta .cabecera {
+  display: flex;
+}
+.planeta .cabecera .titulo,
+.planeta .cabecera .estadisticas {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0;
+}
+.planeta .cabecera .titulo h1,
+.planeta .cabecera .estadisticas h1 {
+  margin: 0px;
+}
+.planeta .cabecera .titulo strong,
+.planeta .cabecera .estadisticas strong {
+  margin: 0px;
+}
+.planeta md-expansion-panel-header {
+  width: 100%;
+}
+.planeta form {
+  display: flex;
+  flex-direction: column;
+}
+.planeta form .linea {
+  display: flex;
+}
+.planeta form .md-button {
+  background-color: #c42830;
+  color: #fff;
+}
+.planeta md-input-container {
+  width: 100%;
+}
+.planeta md-input-container textarea.descripcion {
+  height: 100px;
+}
+.planeta md-input-container textarea.contenido {
+  height: 400px !important;
+}

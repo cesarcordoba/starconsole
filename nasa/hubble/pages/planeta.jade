@@ -1,0 +1,125 @@
+.container.planeta
+    .content
+        md-card
+            .cabecera
+                .titulo
+                    h1 {{ctrl.planeta.singular}}
+                    strong {{ctrl.planeta.plural}}
+                .estadisticas
+                    {{ ctrl.artificiales.length + ctrl.satelites.length  }}
+        md-card
+            md-expansion-panel(md-component-id="creacion")
+                md-expansion-panel-collapsed
+                    md-expansion-panel-header
+                        .md-title Nuevos Satelites
+                        .md-summary Agrega nuevos satelites al planeta
+                        md-expansion-panel-icon
+                md-expansion-panel-expanded
+                    md-expansion-panel-header
+                        .md-title Nuevos Satelites
+                        .md-summary Agrega nuevos satelites al planeta
+                    md-expansion-panel-content
+                        md-select(ng-change="fijar(fijado)" ng-model="fijado")
+                            md-option(ng-repeat="pre in predefinidos" ng-value="pre") {{pre.nombre}}
+                        form(ng-submit="ctrl.nuevo.crear()")
+                            .linea
+                                md-input-container
+                                    label Status
+                                    md-switch(ng-model="ctrl.nuevo.satelite.status" ng-true-value="1" ng-false-value="0")
+                                md-input-container
+                                    label Nombre
+                                    input(ng-model="ctrl.nuevo.satelite.nombre")
+                                md-input-container
+                                    label Tipo
+                                    md-select(ng-model="ctrl.nuevo.satelite.tipo")
+                                        md-option(ng-value="'get'") GET
+                                        md-option(ng-value="'post'") POST
+                                        md-option(ng-value="'put'") PUT
+                                        md-option(ng-value="'delete'") DELETE
+                                md-input-container
+                                    label Parametros
+                                    input(ng-model="ctrl.nuevo.satelite.params")
+                            .linea
+                                md-input-container
+                                    label Ruta Back ( nombre/:id )
+                                    input(ng-model="ctrl.nuevo.satelite.ruta_back")
+                                md-input-container
+                                    label Ruta Front ( nombre/' + id   )
+                                    input(ng-model="ctrl.nuevo.satelite.ruta_front")
+                            md-input-container
+                                label Descripcion
+                                textarea.descripcion(ng-model="ctrl.nuevo.satelite.descripcion")
+                            md-input-container
+                                label Contenido
+                                textarea(rows="10" ng-model="ctrl.nuevo.satelite.contenido")
+                            md-button(type="submit") Crear
+                    md-expansion-panel-footer
+                        md-button(ng-click="$panel.collapse()") Collapse
+        md-card
+            md-expansion-panel-group(md-component-id="satelites" multiple)
+                md-expansion-panel(md-component-id="satelites")
+                    md-expansion-panel-collapsed
+                        md-expansion-panel-header
+                            .md-title Satelites Naturales
+                            .md-summary  Estos son los satelites creados con el Bigbang
+                            md-expansion-panel-icon
+                    md-expansion-panel-expanded
+                        md-expansion-panel-header
+                            .md-title Satelites Naturales
+                            .md-summary  Estos son los satelites creados con el Bigbang
+                        md-expansion-panel-content
+                            md-list
+                                md-list-item.md-2-line(ng-repeat="satelite in ctrl.artificiales")
+                                    .md-list-item-text
+                                        h3 {{satelite.nombre}}
+                                        strong {{satelite.planeta.singular}}
+                                    md-divider
+                        md-expansion-panel-footer
+                            md-button(ng-click="$panel.collapse()") Collapse
+                
+                mad-toolbar
+                    .md-toolbar-tools
+                        h3 Satelites Artificiales
+                md-expansion-panel(md-component-id="satelite.nombre" ng-repeat="satelite in ctrl.satelites")
+                    md-expansion-panel-collapsed
+                        md-expansion-panel-header
+                            .md-title {{satelite.nombre}}
+                            .md-summary  {{satelite.descripcion}}
+                            md-expansion-panel-icon
+                    md-expansion-panel-expanded
+                        md-expansion-panel-header
+                            .md-title {{satelite.nombre}}
+                            .md-summary  {{satelite.descripcion}}
+                        md-expansion-panel-content
+                            form(ng-submit="satelite.editar()")
+                                .linea
+                                    md-input-container
+                                        label Nombre
+                                        input(ng-model="satelite.nombre")
+                                    md-input-container
+                                        label Tipo
+                                        md-select(ng-model="satelite.tipo")
+                                            md-option(ng-value="'get'") GET
+                                            md-option(ng-value="'post'") POST
+                                            md-option(ng-value="'put'") PUT
+                                            md-option(ng-value="'delete'") DELETE
+                                    md-input-container
+                                        label Parametros
+                                        input(ng-model="satelite.params")
+                                .linea
+                                    md-input-container
+                                        label Ruta Back ( nombre/:id )
+                                        input(ng-model="satelite.ruta_back")
+                                    md-input-container
+                                        label Ruta Front ( nombre/' + id   )
+                                        input(ng-model="satelite.ruta_front")
+                                md-input-container
+                                    label Descripcion
+                                    textarea.descripcion(ng-model="satelite.descripcion")
+                                md-input-container
+                                    label Contenido
+                                    textarea.contenido(ng-model="satelite.contenido")
+                                md-button(type="submit")
+                                    md-icon save
+                        md-expansion-panel-footer
+                            md-button(ng-click="$panel.collapse()") Collapse
