@@ -4,7 +4,7 @@ module.exports = (constelacion) => {
 
 
     var direcciones = [
-        'perfil','individual', 'paginacion', 'seccion', 'vista', 'lista', 'grid', 'ficha', 'slider', 'simple', 'autocomplete', 'chip', 'formulario'
+        'perfil','individual', 'paginacion', 'seccion', 'vista', 'lista', 'grid', 'ficha', 'slider', 'simple', 'autocomplete', 'chip', 'formulario', 'imagenes'
     ].map(n => new Object({
         nombre : n,
         controlador : require('./' + n + '/controlador.js'),

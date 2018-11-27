@@ -20,18 +20,18 @@ console.log('++++++++++++++++++++++')
 documento.write(`
 mat-card.componente
     h1 {{ `+ planeta.singular  + `?.nombre }}
-    form(class="example-form", [formGroup]='formulario')`)
+    form(class="example-form")`)
 
 planeta.Meteoros.forEach(meteoro => {
 
         documento.write(`
             mat-form-field
-                input(matInput, placeholder="Busca un ` + meteoro.nombre  + `", formControlName='` + meteoro.nombre  + `', [(ngModel)]="` + planeta.singular + `.` + meteoro.nombre  + `")`)
+                input(matInput, placeholder="Busca un ` + meteoro.nombre  + `", [(ngModel)]="` + planeta.singular + `.` + meteoro.nombre  + `",  name="`+meteoro.nombre  + `")`)
 
 })
 
 documento.write(`
-    button((click)="aceptar()") Aceptar
+    button(mat-raised-button (click)="aceptar()") Aceptar
 `)
 
 

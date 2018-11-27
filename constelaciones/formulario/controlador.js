@@ -49,34 +49,23 @@ documento.write(`
 documento.write(`
     constructor(private fb: FormBuilder) {
 
-        this.formulario = this.fb.group({`)
+        `)
 
-        planeta.Meteoros.forEach(meteoro => {
 
-            documento.write(`
-            `+ meteoro.nombre  + ` : null,`)
-
-        })
 documento.write(`
-        })`)
+        `)
 
-if(planeta)
-documento.write(`
-    // `+ _.capitalize(planeta.singular) + `Service.one()
-    // .then(response => this.` + planeta.plural + ` = response)
-    // .then(response => console.log(response))
-`)
+// if(planeta)
+// documento.write(`
+//     // ` `
+
+// `)
 
 documento.write(`
   }
 
     ngOnInit() {
-        console.log(this.producto)
 
-        this.formulario = this.fb.group({
-            nombre: [ this.producto.nombre ],
-            status: [ this.producto.status ]
-        })
     }
 
 
