@@ -91,7 +91,7 @@ ex.alternativa = (req, res, next) => {
                 vialactea()[galaxia.nombre](arboldeconstelaciones)
 
                 Promise.all(
-                    galaxia.Constelaciones.filter(n => _.isNull(n.IdConstelacion)).map(async (n) =>
+                    galaxia.Constelaciones.filter(n => _.isNull(n.IdConstelacion) || n.tipo === 'ficha').map(async (n) =>
                         await detective(n, 1))
                 ).then(async estela => {
 

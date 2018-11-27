@@ -16,8 +16,8 @@ new Promise((resolve, reject) => {
     if(tipo === 3 || tipo ===  2 || tipo ===  4){
         documento.write(`
     public static ` +  planeta.plural  + ` = id => axios.default.get( url + '/data/` +  modelo.singular  + `/`+  planeta.plural  +`/' + id ).then(response => response.data.map(n => new `+ _.capitalize(planeta.singular) +`( n )))
-    public static ligar` +  planeta.singular  + ` = (`+  modelo.singular  +` , ` +  planeta.singular  + `) => axios.default.put( url + '/` +  modelo.singular  + `-` +  planeta.singular  +`/' + `+  modelo.singular  +` + '/' + `+  planeta.singular  + ` )
-    public static desligar` +  planeta.singular  + ` = (`+  modelo.singular  +` , ` +  planeta.singular  + `) => axios.default.delete( url + '/`+  modelo.singular  + `-` +  planeta.singular  +`/' + `+  modelo.singular  +` + '/' + `+  planeta.singular  +` )
+    public static ligar` +  planeta.singular  + ` = (`+  modelo.singular  +` , ` +  planeta.singular  + `) => axios.default.put( url + '/data/` +  modelo.singular  + `-` +  planeta.singular  +`/' + `+  modelo.singular  +` + '/' + `+  planeta.singular  + ` )
+    public static desligar` +  planeta.singular  + ` = (`+  modelo.singular  +` , ` +  planeta.singular  + `) => axios.default.delete( url + '/data/`+  modelo.singular  + `-` +  planeta.singular  +`/' + `+  modelo.singular  +` + '/' + `+  planeta.singular  +` )
 `)
     resolve(true)
 }

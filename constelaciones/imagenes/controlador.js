@@ -13,7 +13,7 @@ console.log(componente)
 
 Promise.all([
     componente.getPlaneta({include: [{model: planeta, as: 'SubPlanetas'}]}),
-    // componente.getSubConstelaciones()
+    // componente.getSubConstelaciones() 
 ]).then(response => {
 
     let planeta = response[0]
@@ -35,7 +35,8 @@ interface Files {
 @Component({
   selector: '` + componente.nombre + `',
   templateUrl: './` + componente.nombre + `.component.pug',
-  styleUrls: ['./` + componente.nombre + `.component.styl']
+  styleUrls: ['./` + componente.nombre + `.component.styl'],
+providers: [AWSService, Ng2ImgMaxService]
 })
 export class `+ _.capitalize(componente.nombre) + `Component implements OnInit {
 
