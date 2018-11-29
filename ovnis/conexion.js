@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 var Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('starnode', 'root', '1234', {
+var sequelize = new Sequelize('starconsole', 'root', '1234', {
     host: 'localhost',
     dialect: 'mysql',
-    port: '3306',
+    port: '8889',
     operatorsAliases: true,
     pool: {
         max: 5,
