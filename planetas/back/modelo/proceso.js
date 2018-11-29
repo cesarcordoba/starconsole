@@ -4,7 +4,7 @@ module.exports = (documento, modelo, planeta) =>
 new Promise((resolve, reject) => {
 
 
-
+    //BelongsTo, HasMany, HasOne
     if(planeta.orbitas.tipo === 1 || planeta.orbitas.tipo === 2 || planeta.orbitas.tipo === 3){
 
         documento.write(`
@@ -25,7 +25,7 @@ new Promise((resolve, reject) => {
         resolve(true)
     }
 
-
+    //BelongsToMany
     if(planeta.orbitas.tipo === 4){
 
             let menor = modelo.orden > planeta.orden ? modelo : planeta
@@ -33,18 +33,19 @@ new Promise((resolve, reject) => {
 
         documento.write(`
 
-    @`+ planeta.orbitas.nombre +`(()=> `+ _.capitalize(planeta.singular) + `,'` +  mayor.plural + '_' + menor.plural + `','Id` +  _.capitalize(mayor.singular) + `', 'Id`+ _.capitalize(menor.singular) + `')
+    @`+ planeta.orbitas.nombre +`(()=> `+ _.capitalize(planeta.singular) + `,'` +  mayor.plural + '' + menor.plural + `','Id` +  _.capitalize(modelo.singular) + `', 'Id`+ _.capitalize(planeta.singular) + `')
     ` +  _.capitalize(planeta.plural) + ` : ` +  _.capitalize(planeta.singular) + `[];`)
 
         resolve(true)
 
     }
 
+    //Especial
     if(planeta.orbitas.tipo === 5){
         resolve(true)
     }
 
-
+    //Recursiva
     if(planeta.orbitas.tipo === 6){
 
         documento.write(`
@@ -65,7 +66,7 @@ new Promise((resolve, reject) => {
 
     }
 
-
+    //Nodo
     if(planeta.orbitas.tipo === 7){
 
         // Espacio

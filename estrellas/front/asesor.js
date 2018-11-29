@@ -9,18 +9,19 @@ documento.write(`
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
-import { LoginComponent } from './login/login.component';
-import { MaterialModule } from '../../extras/material.module';
-import { ExtrasModule } from '../../extras/extras.module';
+import { MaterialModule } from './../../extras/material.module';
+import { ExtrasModule } from './../../extras/extras.module';
 
 
-import { MainRoutingModule } from './main-routing.module';
-import { MainComponent } from './main.component';
-import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
+import { AsesorComponent } from './asesor.component';
+import { HomeComponent } from './home/home.component'
+import { AsesorRoutingModule } from './asesor-routing.module';
+
 `)
 
 data.forEach(n =>
@@ -33,30 +34,26 @@ documento.write(`
 @NgModule({
 	imports: [
 		CommonModule,
-		MainRoutingModule,
+		FormsModule, ReactiveFormsModule,
+		AsesorRoutingModule,
 		SlickCarouselModule,
-		MaterialModule,
+		FroalaEditorModule, FroalaViewModule,
 		ExtrasModule,
-		FormsModule,
-		ReactiveFormsModule,
-		`)
+		MaterialModule,`)
 
 data.forEach(n =>
 documento.write(`
         `+_.capitalize(n.nombre)+`Module,`))
 
 documento.write(`
+		],
+	entryComponents: [
 	],
 	declarations: [
-		MainComponent,
-		IniciarSesionComponent,
-		LoginComponent
-	],
-	entryComponents : [
-        LoginComponent
-    ],
+		AsesorComponent
+	]
 })
-export class MainModule { }
+export class AsesorModule { }
 `, (algo) => resolve(true))
     })
 }

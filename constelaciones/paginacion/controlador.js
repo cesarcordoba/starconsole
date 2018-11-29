@@ -51,6 +51,12 @@ documento.write(`
                 where : {},
                 include : []
             }
+        this.obtener()
+    }
+
+    obtener(){
+
+
 `)
 
 if(planeta)
@@ -60,6 +66,12 @@ documento.write(`
 `)
 
 documento.write(`
+
+  }
+
+  cambioPagina(ev){
+      this.filtro.pagina = ev.pageIndex + 1
+      this.obtener()
   }
 
   ngOnInit() {

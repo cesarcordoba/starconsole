@@ -2,6 +2,8 @@
 var estrella =  {
     admin : require('./front/admin.js'),
     main : require('./front/main.js'),
+    asesor : require('./front/asesor.js'),
+    usuario : require('./front/usuario.js'),
     back : require('./back/main.js'),
     error : require('./back/error.js'),
     conexion : require('./back/conexion.js'),
@@ -21,6 +23,8 @@ module.exports = (modelos) => {
         back : (modelos) => estrella.back(modelos, escribir('../2.-backend/server/main.ts')),
         main : (modelos) => estrella.main(modelos, escribir('../1.-frontend/src/app/modulos/main/main.module.ts')),
         admin : (modelos) => estrella.admin(modelos, escribir('../1.-frontend/src/app/modulos/admin/admin.module.ts')),
+        asesor : (modelos) => estrella.asesor(modelos, escribir('../1.-frontend/src/app/modulos/asesor/asesor.module.ts')),
+        usuario : (modelos) => estrella.usuario(modelos, escribir('../1.-frontend/src/app/modulos/usuario/usuario.module.ts')),
         index_models: (modelos) => estrella.index_models(modelos, escribir('../1.-frontend/src/app/modelos/index.ts')),
         index_services: (modelos) => estrella.index_services(modelos, escribir('../1.-frontend/src/app/servicios/index.ts'))
     }

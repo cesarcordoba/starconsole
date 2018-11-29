@@ -54,6 +54,7 @@ module.exports = (constelacion, link, modulo, nivel) =>
             }
 
             resolve(obj)
+
         }
 
 })

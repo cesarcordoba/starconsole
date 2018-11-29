@@ -23,7 +23,6 @@ module.exports = (constelacion) => {
 
     let encontrado = direcciones.find(n => n.nombre === constelacion.tipo)
 
-    console.log(encontrado)
 
     return _.isUndefined(encontrado) ? componente : encontrado
 

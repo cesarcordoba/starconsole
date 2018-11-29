@@ -22,7 +22,7 @@ import { AdminComponent } from './admin.component';
 import { HomeComponent } from './home/home.component'
 import { AdminRoutingModule } from './admin-routing.module';
 import { ConfirmDelDialogComponent } from './fragments/confirm-del-dialog/confirm-del-dialog.component';
-import { LoginComponent } from './login/login.component';
+
 import { DetallesUsuarioComponent } from './fragments/detalles-usuario/detalles-usuario.component';
 import { AgregarUsuarioComponent } from './fragments/agregar-usuario/agregar-usuario.component';
 
@@ -59,7 +59,7 @@ documento.write(`
 	declarations: [
 		AdminComponent,
 		ConfirmDelDialogComponent,
-		LoginComponent,
+	
 		DetallesUsuarioComponent,
 		AgregarUsuarioComponent,
 	]
